@@ -1,5 +1,5 @@
-//import '././styles/main.scss';
-//import '../style.css';
+import '../styles/main.scss';
+
 
 document.getElementById("demo2").innerHTML =
 "This is the Home page!";
