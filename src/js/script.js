@@ -1,6 +1,6 @@
 import '../styles/main.scss';
+import * as bootstrap from 'bootstrap';
 
 
-document.getElementById("demo2").innerHTML =
-"This is the Home page!";
+
 

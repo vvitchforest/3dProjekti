@@ -6,7 +6,8 @@ const path = require('path')
 module.exports = {
     entry: {
         script: path.resolve(__dirname, '../src/js/script.js'),
-        test: path.resolve(__dirname, '../src/js/test.js')
+        test: path.resolve(__dirname, '../src/js/test.js'),
+        matterport: path.resolve(__dirname, '../src/js/matterport.js')
     },
     output:
     {
@@ -36,6 +37,16 @@ module.exports = {
                 template: path.resolve(__dirname, '../src/test.html'),
                 chunks: ['test'],
                 filename: 'test.html',
+                minify: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                }
+            }),
+            new HtmlWebpackPlugin({
+                template: path.resolve(__dirname, '../src/matterport.html'),
+                chunks: ['matterport'],
+                inject: true,
+                filename: 'matterport.html',
                 minify: {
                     removeComments: true,
                     collapseWhitespace: true
