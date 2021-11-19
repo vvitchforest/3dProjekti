@@ -7,7 +7,9 @@ module.exports = {
     entry: {
         script: path.resolve(__dirname, '../src/js/script.js'),
         test: path.resolve(__dirname, '../src/js/test.js'),
-        matterport: path.resolve(__dirname, '../src/js/matterport.js')
+        matterport: path.resolve(__dirname, '../src/js/matterport.js'),
+        cupixModel: path.resolve(__dirname, '../src/js/cupixModel.js'),
+        cupixVirtualTour: path.resolve(__dirname, '../src/js/cupixVirtualTour.js')
     },
     output:
     {
@@ -47,6 +49,26 @@ module.exports = {
                 chunks: ['matterport'],
                 inject: true,
                 filename: 'matterport.html',
+                minify: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                }
+            }),
+            new HtmlWebpackPlugin({
+                template: path.resolve(__dirname, '../src/cupixModel.html'),
+                chunks: ['cupixModel'],
+                inject: true,
+                filename: 'cupixModel.html',
+                minify: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                }
+            }),
+            new HtmlWebpackPlugin({
+                template: path.resolve(__dirname, '../src/cupixVirtualTour.html'),
+                chunks: ['cupixVirtualTour'],
+                inject: true,
+                filename: 'cupixVirtualTour.html',
                 minify: {
                     removeComments: true,
                     collapseWhitespace: true
