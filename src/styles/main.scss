@@ -1,5 +1,10 @@
 @import "~normalize.css/normalize.css";
 @import "~bootstrap/scss/bootstrap";
+@import "tooltip.scss";
+
+.main {
+    margin-top: 3em;
+}
 
 .webgl {
     position: fixed;

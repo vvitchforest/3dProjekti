@@ -1,21 +1,10 @@
 import '../styles/main.scss';
+import '../modules/nav-loading.js';
 import * as bootstrap from 'bootstrap';
 
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-
-//Check if DOM is loaded
-let domReady = (cb) => {
-    document.readyState === 'interactive' || document.readyState === 'complete'
-      ? cb()
-      : document.addEventListener('DOMContentLoaded', cb);
-  };
-  
-  domReady(() => {
-    // Display body when DOM is loaded. This is to prevent the flash of unstyled html content on load
-    document.body.style.visibility = 'visible';
-  });
 
 
 let perspectiveCamera, orthographicCamera, controls, scene, renderer;
