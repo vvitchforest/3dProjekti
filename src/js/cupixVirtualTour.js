@@ -12,3 +12,7 @@ let domReady = (cb) => {
     // Display body when DOM is loaded. This is to prevent the flash of unstyled html content on load
     document.body.style.visibility = 'visible';
   });
+
+var exampleEl = document.getElementById('example')
+var tooltip = new bootstrap.Tooltip(exampleEl, options)
+tooltip.innerHTML = "fdsfdsfs"

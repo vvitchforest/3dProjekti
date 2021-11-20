@@ -1,0 +1,38 @@
+doctype html
+html(lang='en')
+    head
+        block head
+            meta(charset='UTF-8')
+            title=  'title'
+    body
+        block content
+            nav(class="navbar navbar-expand-lg navbar-light bg-light")
+                div(class="container-fluid")
+                    a(class="navbar-brand" href="#")
+                    button(class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+                        span(class="navbar-toggler-icon")
+                    div(class="collapse navbar-collapse" id="navbarSupportedContent")
+                        ul(class="navbar-nav me-auto mb-2 mb-lg-0")
+                            li(class="nav-item")
+                                a(class="nav-link active" aria-current="page" href="index.html") Home
+                            li(class="nav-item")
+                                a(class="nav-link" href="matterport.html") Matterport
+                            li(class="nav-item dropdown")
+                                a(class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false") Virtual tours
+                                ul(class="dropdown-menu" aria-labelledby="navbarDropdown")
+                                    li 
+                                        a(class="dropdown-item" href="test.html") Test
+                                    li 
+                                        a(class="dropdown-item" href="#") Item 2
+                                    li
+                                        a(class="dropdown-item" href="cupixVirtualTour.html") Cupix
+                            li(class="nav-item dropdown")
+                                a(class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false") 3D Models
+                                ul(class="dropdown-menu" aria-labelledby="navbarDropdown")
+                                    li 
+                                        a(class="dropdown-item" href="#") Item 1
+                                    li 
+                                     a(class="dropdown-item" href="#") Item 2
+                                    li  
+                                        a(class="dropdown-item" href="cupixModel.html") Cupix
+            

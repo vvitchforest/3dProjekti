@@ -1,12 +1,19 @@
 @import "~normalize.css/normalize.css";
 @import "~bootstrap/scss/bootstrap";
 
-.webgl
-{
+.webgl {
     position: fixed;
     top: 10;
     left: 0;
     outline: none;
+    z-index: 2;
+}
+
+i {
+    position: fixed;
+    top: 20;
+    right: 20;
+    z-index: 10;
 }
 
 .demo2 {

@@ -6,6 +6,7 @@ const path = require('path')
 module.exports = {
     entry: {
         script: path.resolve(__dirname, '../src/js/script.js'),
+        layout: path.resolve(__dirname, '../src/js/layout.js'),
         test: path.resolve(__dirname, '../src/js/test.js'),
         matterport: path.resolve(__dirname, '../src/js/matterport.js'),
         cupixModel: path.resolve(__dirname, '../src/js/cupixModel.js'),
@@ -27,7 +28,7 @@ module.exports = {
                 ]
             }),
             new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, '../src/index.html'),
+                template: path.resolve(__dirname, '../src/index.pug'),
                 chunks: ['script'],
                 filename: 'index.html',
                 minify: {
@@ -36,7 +37,16 @@ module.exports = {
                 }
             }),
             new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, '../src/test.html'),
+                template: path.resolve(__dirname, '../src/layout.pug'),
+                chunks: ['script'],
+                filename: 'layout.html',
+                minify: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                }
+            }),
+            new HtmlWebpackPlugin({
+                template: path.resolve(__dirname, '../src/test.pug'),
                 chunks: ['test'],
                 filename: 'test.html',
                 minify: {
@@ -45,7 +55,7 @@ module.exports = {
                 }
             }),
             new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, '../src/matterport.html'),
+                template: path.resolve(__dirname, '../src/matterport.pug'),
                 chunks: ['matterport'],
                 inject: true,
                 filename: 'matterport.html',
@@ -55,7 +65,7 @@ module.exports = {
                 }
             }),
             new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, '../src/cupixModel.html'),
+                template: path.resolve(__dirname, '../src/cupixModel.pug'),
                 chunks: ['cupixModel'],
                 inject: true,
                 filename: 'cupixModel.html',
@@ -65,7 +75,7 @@ module.exports = {
                 }
             }),
             new HtmlWebpackPlugin({
-                template: path.resolve(__dirname, '../src/cupixVirtualTour.html'),
+                template: path.resolve(__dirname, '../src/cupixVirtualTour.pug'),
                 chunks: ['cupixVirtualTour'],
                 inject: true,
                 filename: 'cupixVirtualTour.html',
@@ -83,6 +93,17 @@ module.exports = {
                 {
                     test: /\.(html)$/,
                     use: ['html-loader']
+                },
+
+                //PUG
+                {
+                    test: /\.pug$/,
+                    use: ['html-loader', 'pug-html-loader']
+                  },
+
+                { 
+                    test: /\.jade$/,
+                    use: ['jade']
                 },
 
                 // JS
